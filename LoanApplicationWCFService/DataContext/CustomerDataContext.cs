@@ -59,7 +59,7 @@ namespace LoanApplicationWCFService.DataContext
         {
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
-            cmd.CommandText = "spUpdateCustomerModel";
+            cmd.CommandText = "spUpdateCustomersModel";
             cmd.CommandType = CommandType.StoredProcedure;
             SqlParameter id = new SqlParameter("@Id", Id.ToString());
             cmd.Parameters.Add(id);
@@ -130,7 +130,7 @@ namespace LoanApplicationWCFService.DataContext
                 customer.EmploymentType = dt.Rows[i]["EmploymentType"].ToString();
                 customer.MaritialStatus = dt.Rows[i]["MaritialStatus"].ToString();
                 customer.Income = Convert.ToDecimal(dt.Rows[i]["Income"].ToString());
-                customer.DateOfBirth = dt.Rows[i]["AddressProof"].ToString();
+                customer.DateOfBirth = dt.Rows[i]["DateOfBirth"].ToString();
                 customer.AddressProof = dt.Rows[i]["AddressProof"].ToString();
                 customer.AddressProofNumber = dt.Rows[i]["AddressProofNumber"].ToString();
                 customer.PanCardNumber = dt.Rows[i]["PanCardNumber"].ToString();

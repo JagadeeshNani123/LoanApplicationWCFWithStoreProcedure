@@ -23,7 +23,7 @@ namespace LoanApplicationWCFService.DataContext
             var id = Guid.NewGuid();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
-            cmd.CommandText = "spInsertLoanModel";
+            cmd.CommandText = "spInsertLoansObject";
             cmd.CommandType = CommandType.StoredProcedure;
             SqlParameter LoanId = new SqlParameter("@LoanId", id.ToString());
             cmd.Parameters.Add(LoanId);
@@ -47,7 +47,7 @@ namespace LoanApplicationWCFService.DataContext
         {
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
-            cmd.CommandText = "spUpdateLoanModel";
+            cmd.CommandText = "spUpdateLoansObject";
             cmd.CommandType = CommandType.StoredProcedure;
             SqlParameter id = new SqlParameter("@LoanId", Id.ToString());
             cmd.Parameters.Add(id);
