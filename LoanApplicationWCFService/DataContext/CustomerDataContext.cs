@@ -98,6 +98,7 @@ namespace LoanApplicationWCFService.DataContext
             cmd.CommandType = CommandType.StoredProcedure;
             SqlParameter id = new SqlParameter("@Id", Id);
             cmd.Parameters.Add(id);
+            cmd.ExecuteNonQuery();
         }
 
         public CustomerModel GetCustomerById(Guid Id)
