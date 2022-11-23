@@ -45,6 +45,8 @@ namespace LoanApplicationWCFService.DataContext
             cmd.Connection = con;
             cmd.CommandText = "spUpdateBankDetails";
             cmd.CommandType = CommandType.StoredProcedure;
+            SqlParameter BankId = new SqlParameter("@BankId", Id);
+            cmd.Parameters.Add(BankId);
             SqlParameter CustomerId = new SqlParameter("@CustomerId", BankDetails.CustomerId);
             cmd.Parameters.Add(CustomerId);
             SqlParameter BankAccountNumber = new SqlParameter("@BankAccountNumber", BankDetails.BankAccountNumber);
